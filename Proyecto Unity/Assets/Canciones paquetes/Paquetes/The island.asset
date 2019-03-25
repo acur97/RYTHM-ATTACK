@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4062f14358b711040a8163ce9c933223, type: 3}
+  m_Name: The island
+  m_EditorClassIdentifier: 
+  NombreCancion: The Island Remix
+  Artista: Pendulum Ft. Skrillex
+  LogoCancion: {fileID: 21300000, guid: 9cc44eb040b8b9a429494db41b85b18d, type: 3}
+  FormaDeOnda: {fileID: 21300000, guid: fbda6943bfeb3744eae344f944c325e6, type: 3}
+  Dificultad: 1
+  Volumen: 0.55
+  Cancion: {fileID: 8300000, guid: d0e670b5daf0f3c498c399e8f583f380, type: 3}
+  inicioPreview: 49
+  Estalle:
+  - 51.40347
+  - 54.60347
+  - 128.2062
+  - 131.4062

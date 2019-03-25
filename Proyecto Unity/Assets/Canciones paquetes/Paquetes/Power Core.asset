@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4062f14358b711040a8163ce9c933223, type: 3}
+  m_Name: Power Core
+  m_EditorClassIdentifier: 
+  NombreCancion: Power Core
+  Artista: Far Cry 3 Theme
+  LogoCancion: {fileID: 21300000, guid: 0b757b875d37fcb4ea976690926b0cb7, type: 3}
+  FormaDeOnda: {fileID: 21300000, guid: 68adbdcd59927324983e34b9b8a9de62, type: 3}
+  Dificultad: 0
+  Volumen: 1
+  Cancion: {fileID: 8300000, guid: 62a8f6d444940be4fa7ab10fdd9d555c, type: 3}
+  inicioPreview: 75
+  Estalle:
+  - 34.03242
+  - 79.19469
+  - 202.1094
+  - 326.1892
+  - 449.9956
+  - 585.0027

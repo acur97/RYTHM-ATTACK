@@ -1,0 +1,241 @@
+fileFormatVersion: 2
+guid: 1abfb85d9eb857645ab0af9c6b69fd90
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: "Ca\xF1on2"
+    100002: "Ca\xF1on4"
+    100004: group1
+    100006: left
+    100008: //RootNode
+    100010: pCube3
+    100012: pPipe2
+    100014: pPipe3
+    100016: pPipe3 1
+    100018: pPipe3 2
+    100020: pPipe5
+    100022: pPipe5 1
+    100024: pPipe5 2
+    100026: pPipe7
+    100028: pPipe7 1
+    100030: pPipe7 2
+    100032: pPipe8
+    100034: pPipe8 1
+    100036: pPipe8 2
+    100038: pPipe9
+    100040: Propulsor
+    100042: Propulsor1
+    100044: Propulsor2
+    400000: "Ca\xF1on2"
+    400002: "Ca\xF1on4"
+    400004: group1
+    400006: left
+    400008: //RootNode
+    400010: pCube3
+    400012: pPipe2
+    400014: pPipe3
+    400016: pPipe3 1
+    400018: pPipe3 2
+    400020: pPipe5
+    400022: pPipe5 1
+    400024: pPipe5 2
+    400026: pPipe7
+    400028: pPipe7 1
+    400030: pPipe7 2
+    400032: pPipe8
+    400034: pPipe8 1
+    400036: pPipe8 2
+    400038: pPipe9
+    400040: Propulsor
+    400042: Propulsor1
+    400044: Propulsor2
+    2000000: left
+    2100000: BASE4
+    2100002: BASE1
+    2100004: BASE7
+    2100006: BASE6
+    2100008: BASE3
+    2100010: BASE5
+    2100012: BASE8
+    2100014: BASE2
+    2100016: BASE9
+    2300000: "Ca\xF1on2"
+    2300002: "Ca\xF1on4"
+    2300004: pCube3
+    2300006: pPipe2
+    2300008: pPipe3
+    2300010: pPipe3 1
+    2300012: pPipe3 2
+    2300014: pPipe5
+    2300016: pPipe5 1
+    2300018: pPipe5 2
+    2300020: pPipe7
+    2300022: pPipe7 1
+    2300024: pPipe7 2
+    2300026: pPipe8
+    2300028: pPipe8 1
+    2300030: pPipe8 2
+    2300032: pPipe9
+    3300000: "Ca\xF1on2"
+    3300002: "Ca\xF1on4"
+    3300004: pCube3
+    3300006: pPipe2
+    3300008: pPipe3
+    3300010: pPipe3 1
+    3300012: pPipe3 2
+    3300014: pPipe5
+    3300016: pPipe5 1
+    3300018: pPipe5 2
+    3300020: pPipe7
+    3300022: pPipe7 1
+    3300024: pPipe7 2
+    3300026: pPipe8
+    3300028: pPipe8 1
+    3300030: pPipe8 2
+    3300032: pPipe9
+    4300000: "Ca\xF1on2"
+    4300002: pPipe3
+    4300004: pPipe5
+    4300006: pPipe8
+    4300008: pPipe7
+    4300010: pPipe3
+    4300012: pPipe5
+    4300014: pPipe8
+    4300016: pPipe7
+    4300018: pPipe3
+    4300020: pPipe5
+    4300022: pPipe8
+    4300024: pPipe7
+    4300026: pPipe2
+    4300028: pCube3
+    4300030: "Ca\xF1on4"
+    4300032: pPipe9
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BASE1
+    second: {fileID: 2100000, guid: 80971d47b9e7885449b16859e959b92d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BASE2
+    second: {fileID: 2100000, guid: 0aa5cac54e6486049848f8598c27fd3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BASE3
+    second: {fileID: 2100000, guid: 1b6fbdb38276acb43b5b371ab1e564c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BASE4
+    second: {fileID: 2100000, guid: 42db299aa5021274fa85dee41e1eb679, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BASE5
+    second: {fileID: 2100000, guid: 73afd534441f243468d9dab7f1aa14e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BASE6
+    second: {fileID: 2100000, guid: c0a25397711824e41864085feebaaba5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BASE7
+    second: {fileID: 2100000, guid: ef6807408330d574fb7a678f7029b631, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BASE8
+    second: {fileID: 2100000, guid: 5457238b6a5df1e4ea3beb6dd7986c8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BASE9
+    second: {fileID: 2100000, guid: 7c5094baf76ca6b4a9acab05788421c1, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

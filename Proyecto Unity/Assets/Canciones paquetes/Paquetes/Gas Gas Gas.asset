@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4062f14358b711040a8163ce9c933223, type: 3}
+  m_Name: Gas Gas Gas
+  m_EditorClassIdentifier: 
+  NombreCancion: Gas Gas Gas
+  Artista: Manuel
+  LogoCancion: {fileID: 21300000, guid: 83fcb8fecf86f734c8b233c3fb073ad9, type: 3}
+  FormaDeOnda: {fileID: 21300000, guid: b78ef813714efbb45a73b6b307cbca37, type: 3}
+  Dificultad: 1
+  Volumen: 0.59
+  Cancion: {fileID: 8300000, guid: baa0c58185854e844b0cab300cdadf9b, type: 3}
+  inicioPreview: 74
+  Estalle:
+  - 40.80685
+  - 78.24998
+  - 103.0837
+  - 140.5013
+  - 177.8941
+  - 216.9011
+  - 241.7697

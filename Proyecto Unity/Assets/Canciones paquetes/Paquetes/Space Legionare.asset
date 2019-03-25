@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4062f14358b711040a8163ce9c933223, type: 3}
+  m_Name: Space Legionare
+  m_EditorClassIdentifier: 
+  NombreCancion: Space Legionare
+  Artista: Tonebox
+  LogoCancion: {fileID: 21300000, guid: 8c37d8d0cbe4305479383e240a6b3d58, type: 3}
+  FormaDeOnda: {fileID: 21300000, guid: 77fe769917bae4e43a702fbc528099fe, type: 3}
+  Dificultad: 0
+  Volumen: 0.52
+  Cancion: {fileID: 8300000, guid: 64ddd7194bd32e84badad911218a772c, type: 3}
+  inicioPreview: 33
+  Estalle:
+  - 36.71463
+  - 109.8436
+  - 201.2277

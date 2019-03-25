@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4062f14358b711040a8163ce9c933223, type: 3}
+  m_Name: Slum Lord
+  m_EditorClassIdentifier: 
+  NombreCancion: Slum Lord
+  Artista: Mega Drive
+  LogoCancion: {fileID: 21300000, guid: 9625e3d25add13a4da51720f6319c0b5, type: 3}
+  FormaDeOnda: {fileID: 21300000, guid: 66c4904a2e4180442a1821aca40db18a, type: 3}
+  Dificultad: 0
+  Volumen: 0.52
+  Cancion: {fileID: 8300000, guid: 917266c3683f42843ac14c2cdcf48750, type: 3}
+  inicioPreview: 6
+  Estalle:
+  - 0

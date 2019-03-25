@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4062f14358b711040a8163ce9c933223, type: 3}
+  m_Name: Alone
+  m_EditorClassIdentifier: 
+  NombreCancion: Alone
+  Artista: Marshmello
+  LogoCancion: {fileID: 21300000, guid: 507a495ced676474b806be0b91ad1864, type: 3}
+  FormaDeOnda: {fileID: 21300000, guid: 760f8aa110ea2ae4da47e7aa838b8a01, type: 3}
+  Dificultad: 1
+  Volumen: 0.5
+  Cancion: {fileID: 8300000, guid: 195e34b762918a94b84a3de0503b0f15, type: 3}
+  inicioPreview: 16.5
+  Estalle:
+  - 20.41583
+  - 74.53152
+  - 169.1787

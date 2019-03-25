@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4062f14358b711040a8163ce9c933223, type: 3}
+  m_Name: Immortal
+  m_EditorClassIdentifier: 
+  NombreCancion: Immortal
+  Artista: unknown
+  LogoCancion: {fileID: 21300000, guid: ea7efc7b2c6949e4daa04284ad791a08, type: 3}
+  FormaDeOnda: {fileID: 21300000, guid: ba6113d59ea402149877a1578579dd87, type: 3}
+  Dificultad: 2
+  Volumen: 0.6
+  Cancion: {fileID: 8300000, guid: 320743111a400f945bf9b2b684a02561, type: 3}
+  inicioPreview: 80
+  Estalle:
+  - 56.40097
+  - 59.85696
+  - 63.27029
+  - 66.51297
+  - 83.85696
+  - 197.0206

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4062f14358b711040a8163ce9c933223, type: 3}
+  m_Name: Running in the 90s
+  m_EditorClassIdentifier: 
+  NombreCancion: Running in the 90s
+  Artista: Initial D
+  LogoCancion: {fileID: 21300000, guid: 83fcb8fecf86f734c8b233c3fb073ad9, type: 3}
+  FormaDeOnda: {fileID: 21300000, guid: a72507c0525d0a145b84e8169e604a8e, type: 3}
+  Dificultad: 1
+  Volumen: 0.72
+  Cancion: {fileID: 8300000, guid: 34b2220e9d7ae184f86bb2c81723633c, type: 3}
+  inicioPreview: 23
+  Estalle:
+  - 25.15803
+  - 85.77118
+  - 146.3156
+  - 206.9226
