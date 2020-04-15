@@ -21,21 +21,24 @@ public class AlGanar : MonoBehaviour {
 
     private void Update()
     {
-        duracion = (Source.clip.length + Source.time - Source.clip.length) / Source.clip.length;
+        if (!menus.yaGano)
+        {
+            duracion = (Source.clip.length + Source.time - Source.clip.length) / Source.clip.length;
 
-        if (equalizer.highFreq == 0 && equalizer.midFreq == 0 && equalizer.lowFreq == 0)
-        {
-            Ganaste = true;
-        }
-        if (duracion == 1)
-        {
-            Ganaste = true;
-        }
+            if (equalizer.highFreq == 0 && equalizer.midFreq == 0 && equalizer.lowFreq == 0)
+            {
+                Ganaste = true;
+            }
+            if (duracion == 1)
+            {
+                Ganaste = true;
+            }
 
-        if (Ganaste)
-        {
-            menus.Final();
-            ptsFinal.ActualizarPuntaje();
+            if (Ganaste)
+            {
+                menus.Final();
+                ptsFinal.ActualizarPuntaje();
+            }
         }
     }
 }

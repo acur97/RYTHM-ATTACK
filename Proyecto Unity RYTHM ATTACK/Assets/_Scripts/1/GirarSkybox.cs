@@ -7,14 +7,16 @@ public class GirarSkybox : MonoBehaviour {
     public float VelocidadRotacion;
     private readonly int rotacion_ID = Shader.PropertyToID("_Rotation");
     private Material rSettings;
+    private float val;
 
-    private void Awake()
+    private void Start()
     {
         rSettings = RenderSettings.skybox;
     }
 
     private void Update()
     {
-        rSettings.SetFloat(rotacion_ID, (Time.unscaledTime * VelocidadRotacion - 45));
+        val += Time.deltaTime * VelocidadRotacion;
+        rSettings.SetFloat(rotacion_ID, val);
     }
 }

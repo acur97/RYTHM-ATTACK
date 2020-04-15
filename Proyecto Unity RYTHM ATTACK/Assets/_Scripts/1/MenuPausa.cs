@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class MenuPausa : MonoBehaviour {
 
@@ -10,10 +11,11 @@ public class MenuPausa : MonoBehaviour {
     public GameObject UIpausa;
     public Button PausaPrimerSelect;
     public GameObject UIplay;
+    public EventSystem eSystem;
 
     private AudioSource source;
     private int enPausa = 1;
-    private bool yaGano;
+    public bool yaGano;
 
     private readonly string botonPausa = "Cancel";
     private readonly string scene0 = "0";
@@ -45,6 +47,8 @@ public class MenuPausa : MonoBehaviour {
                     Time.timeScale = 0;
                     UIplay.SetActive(false);
                     UIpausa.SetActive(true);
+                    eSystem.SetSelectedGameObject(null);
+                    //eSystem.SetSelectedGameObject(PausaPrimerSelect);
                     PausaPrimerSelect.Select();
                     source.Pause();
                     MoverJugador.recibeInputs = false;
@@ -83,6 +87,7 @@ public class MenuPausa : MonoBehaviour {
         enPausa = 0;
         source.Stop();
         MoverJugador.recibeInputs = true;
+        PlayerPrefs.SetInt("Restart", 1);
     }
 
     public void Exit()
@@ -99,6 +104,7 @@ public class MenuPausa : MonoBehaviour {
         UIfinal.SetActive(true);
         Time.timeScale = 0.5f;
         MoverJugador.recibeInputs = false;
-        PausaPrimerSelect.Select();
+        eSystem.SetSelectedGameObject(null);
+        FinalPrimerSelect.Select();
     }
 }

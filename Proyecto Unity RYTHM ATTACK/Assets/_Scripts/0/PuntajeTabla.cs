@@ -6,6 +6,8 @@ using TMPro;
 
 public class PuntajeTabla : MonoBehaviour {
 
+    public bool Main;
+    [Space]
     public TextMeshProUGUI U1_nombre;
     public TextMeshProUGUI U1_valor;
     public TextMeshProUGUI U1_cancion;
@@ -46,51 +48,100 @@ public class PuntajeTabla : MonoBehaviour {
     private readonly string T5_cancion = "tabla #5_cancion";
     private readonly string RecordPorCancion = "RecordDe_";
     private readonly string espacios = "----------";
+    private readonly string numeral = "#";
+    private readonly string slash = "/";
+
+    private string[] jugadores;
+    private int[] puntajes;
 
     private void Awake()
     {
-        if (!PlayerPrefs.HasKey(T1_nombre))
+        if(Main)
         {
-            PlayerPrefs.SetInt(T1_valor, 0);
-            PlayerPrefs.SetString(T1_nombre, espacios);
-            PlayerPrefs.SetString(T1_cancion, espacios);
+            if (!PlayerPrefs.HasKey(T1_nombre))
+            {
+                PlayerPrefs.SetInt(T1_valor, 0);
+                PlayerPrefs.SetString(T1_nombre, espacios);
+                PlayerPrefs.SetString(T1_cancion, espacios);
+                Debug.Log("crear string");
+            }
+            if (!PlayerPrefs.HasKey(T2_nombre))
+            {
+                PlayerPrefs.SetInt(T2_valor, 0);
+                PlayerPrefs.SetString(T2_nombre, espacios);
+                PlayerPrefs.SetString(T2_cancion, espacios);
+                Debug.Log("crear string");
+            }
+            if (!PlayerPrefs.HasKey(T3_nombre))
+            {
+                PlayerPrefs.SetInt(T3_valor, 0);
+                PlayerPrefs.SetString(T3_nombre, espacios);
+                PlayerPrefs.SetString(T3_cancion, espacios);
+                Debug.Log("crear string");
+            }
+            if (!PlayerPrefs.HasKey(T4_nombre))
+            {
+                PlayerPrefs.SetInt(T4_valor, 0);
+                PlayerPrefs.SetString(T4_nombre, espacios);
+                PlayerPrefs.SetString(T4_cancion, espacios);
+                Debug.Log("crear string");
+            }
+            if (!PlayerPrefs.HasKey(T5_nombre))
+            {
+                PlayerPrefs.SetInt(T5_valor, 0);
+                PlayerPrefs.SetString(T5_nombre, espacios);
+                PlayerPrefs.SetString(T5_cancion, espacios);
+                Debug.Log("crear string");
+            }
 
-            PlayerPrefs.SetInt(T2_valor, 0);
-            PlayerPrefs.SetString(T2_nombre, espacios);
-            PlayerPrefs.SetString(T2_cancion, espacios);
+            U1_nombre.text = PlayerPrefs.GetString(T1_nombre);
+            U1_valor.text = PlayerPrefs.GetInt(T1_valor).ToString();
+            U1_cancion.text = PlayerPrefs.GetString(T1_cancion);
 
-            PlayerPrefs.SetInt(T3_valor, 0);
-            PlayerPrefs.SetString(T3_nombre, espacios);
-            PlayerPrefs.SetString(T3_cancion, espacios);
+            U2_nombre.text = PlayerPrefs.GetString(T2_nombre);
+            U2_valor.text = PlayerPrefs.GetInt(T2_valor).ToString();
+            U2_cancion.text = PlayerPrefs.GetString(T2_cancion);
 
-            PlayerPrefs.SetInt(T4_valor, 0);
-            PlayerPrefs.SetString(T4_nombre, espacios);
-            PlayerPrefs.SetString(T4_cancion, espacios);
+            U3_nombre.text = PlayerPrefs.GetString(T3_nombre);
+            U3_valor.text = PlayerPrefs.GetInt(T3_valor).ToString();
+            U3_cancion.text = PlayerPrefs.GetString(T3_cancion);
 
-            PlayerPrefs.SetInt(T5_valor, 0);
-            PlayerPrefs.SetString(T5_nombre, espacios);
-            PlayerPrefs.SetString(T5_cancion, espacios);
+            U4_nombre.text = PlayerPrefs.GetString(T4_nombre);
+            U4_valor.text = PlayerPrefs.GetInt(T4_valor).ToString();
+            U4_cancion.text = PlayerPrefs.GetString(T4_cancion);
+
+            U5_nombre.text = PlayerPrefs.GetString(T5_nombre);
+            U5_valor.text = PlayerPrefs.GetInt(T5_valor).ToString();
+            U5_cancion.text = PlayerPrefs.GetString(T5_cancion);
+        }
+    }
+
+    private void Start()
+    {
+        /*PlayerPrefs.SetString("Cancion prueba", "4121/juanito#1234213/perd asdf#123/asdf#12343/sasa#423/3223qe");
+        test = PlayerPrefs.GetString("Cancion prueba");
+        string[] test2 = test.Split('#');
+        jugadores = new string[test2.Length];
+        puntajes = new string[test2.Length];
+        for (int i = 0; i < test2.Length; i++)
+        {
+            string[] beta = test2[i].Split('/');
+            Debug.Log(test2[i]);
+            puntajes[i] = beta[0];
+            jugadores[i] = beta[1];
         }
 
-        U1_nombre.text = PlayerPrefs.GetString(T1_nombre);
-        U1_valor.text = PlayerPrefs.GetInt(T1_valor).ToString();
-        U1_cancion.text = PlayerPrefs.GetString(T1_cancion);
-
-        U2_nombre.text = PlayerPrefs.GetString(T2_nombre);
-        U2_valor.text = PlayerPrefs.GetInt(T2_valor).ToString();
-        U2_cancion.text = PlayerPrefs.GetString(T2_cancion);
-
-        U3_nombre.text = PlayerPrefs.GetString(T3_nombre);
-        U3_valor.text = PlayerPrefs.GetInt(T3_valor).ToString();
-        U3_cancion.text = PlayerPrefs.GetString(T3_cancion);
-
-        U4_nombre.text = PlayerPrefs.GetString(T4_nombre);
-        U4_valor.text = PlayerPrefs.GetInt(T4_valor).ToString();
-        U4_cancion.text = PlayerPrefs.GetString(T4_cancion);
-
-        U5_nombre.text = PlayerPrefs.GetString(T5_nombre);
-        U5_valor.text = PlayerPrefs.GetInt(T5_valor).ToString();
-        U5_cancion.text = PlayerPrefs.GetString(T5_cancion);
+        testF = puntajes[0] + "/" +
+                jugadores[0] + "#" +
+                puntajes[1] + "/" +
+                jugadores[1] + "#" +
+                puntajes[2] + "/" +
+                jugadores[2] + "#" +
+                puntajes[3] + "/" +
+                jugadores[3] + "#" +
+                puntajes[4] + "/" +
+                jugadores[4];*/
+        //PreguntaRecord(10, Musicas.pak.NombreCancion);
     }
 
     public void NombreDeRecord(string nombre)
@@ -103,35 +154,90 @@ public class PuntajeTabla : MonoBehaviour {
         nombreCancion = nombre;
     }
 
-    public void PreguntaRecord(int puntaje)
+    public int PreguntaRecord(int puntaje, string cancion)
     {
-        if (puntaje >= PlayerPrefs.GetInt(T1_valor))
+        string tablaCancion_string;
+        tablaCancion_string = PlayerPrefs.GetString(cancion);
+        string[] tablaCancion_array = tablaCancion_string.Split('#');
+        jugadores = new string[tablaCancion_array.Length];
+        puntajes = new int[tablaCancion_array.Length];
+        for (int i = 0; i < tablaCancion_array.Length; i++)
         {
-            Puntaje.SiRecord = true;
+            string[] beta = tablaCancion_array[i].Split('/');
+            puntajes[i] = int.Parse(beta[0]);
+            jugadores[i] = beta[1];
         }
-        if (puntaje >= PlayerPrefs.GetInt(T2_valor) && puntaje < PlayerPrefs.GetInt(T1_valor))
+
+        if (puntaje >= puntajes[0])
         {
-            Puntaje.SiRecord = true;
+            //Puntaje.SiRecord = true;
+            return 1;
         }
-        if (puntaje >= PlayerPrefs.GetInt(T3_valor) && puntaje < PlayerPrefs.GetInt(T2_valor))
+        else if (puntaje >= puntajes[1] && puntaje < puntajes[0])
         {
-            Puntaje.SiRecord = true;
+            //Puntaje.SiRecord = true;
+            return 2;
         }
-        if (puntaje >= PlayerPrefs.GetInt(T4_valor) && puntaje < PlayerPrefs.GetInt(T3_valor))
+        else if (puntaje >= puntajes[2] && puntaje < puntajes[1])
         {
-            Puntaje.SiRecord = true;
+            //Puntaje.SiRecord = true;
+            return 3;
         }
-        if (puntaje >= PlayerPrefs.GetInt(T5_valor) && puntaje < PlayerPrefs.GetInt(T4_valor))
+        else if (puntaje >= puntajes[3] && puntaje < puntajes[2])
         {
-            Puntaje.SiRecord = true;
+            //Puntaje.SiRecord = true;
+            return 4;
         }
+        else if (puntaje >= puntajes[4] && puntaje < puntajes[3])
+        {
+            //Puntaje.SiRecord = true;
+            return 5;
+        }
+        else if (puntaje == 0)
+        {
+            return 6;
+        }
+        else
+        {
+            return 0;
+        }
+        
+        /*if (puntaje >= PlayerPrefs.GetInt(T1_valor))
+        {
+            //Puntaje.SiRecord = true;
+            return 1;
+        }
+        else if (puntaje >= PlayerPrefs.GetInt(T2_valor) && puntaje < PlayerPrefs.GetInt(T1_valor))
+        {
+            //Puntaje.SiRecord = true;
+            return 2;
+        }
+        else if (puntaje >= PlayerPrefs.GetInt(T3_valor) && puntaje < PlayerPrefs.GetInt(T2_valor))
+        {
+            //Puntaje.SiRecord = true;
+            return 3;
+        }
+        else if (puntaje >= PlayerPrefs.GetInt(T4_valor) && puntaje < PlayerPrefs.GetInt(T3_valor))
+        {
+            //Puntaje.SiRecord = true;
+            return 4;
+        }
+        else if (puntaje >= PlayerPrefs.GetInt(T5_valor) && puntaje < PlayerPrefs.GetInt(T4_valor))
+        {
+            //Puntaje.SiRecord = true;
+            return 5;
+        }
+        else
+        {
+            return 0;
+        }*/
     }
 
     public void NuevoPuntaje(int puntaje)
     {
         //Escribir valor de record de cancion si es mayor al anterior
         string RecordDeCancion = RecordPorCancion + nombreCancion;
-        if (PlayerPrefs.HasKey(RecordDeCancion))
+        /*if (PlayerPrefs.HasKey(RecordDeCancion))
         {
             if (puntaje > PlayerPrefs.GetInt(RecordDeCancion))
             {
@@ -143,7 +249,83 @@ public class PuntajeTabla : MonoBehaviour {
         {
             PlayerPrefs.SetInt(RecordDeCancion, puntaje);
             PlayerPrefs.SetString(RecordDeCancion + 2, nombreRecord);
+        }*/
+        PlayerPrefs.SetInt(RecordDeCancion, puntaje);
+        PlayerPrefs.SetString(RecordDeCancion + 2, nombreRecord);
+
+        if (puntaje >= puntajes[0])
+        {
+            //puntajes[1] = puntajes[0];
+            //puntajes[2] = puntajes[1];
+            //puntajes[3] = puntajes[2];
+            //puntajes[4] = puntajes[3];
+
+            puntajes[4] = puntajes[3];
+            jugadores[4] = jugadores[3];
+            puntajes[3] = puntajes[2];
+            jugadores[3] = jugadores[2];
+            puntajes[2] = puntajes[1];
+            jugadores[2] = jugadores[1];
+            puntajes[1] = puntajes[0];
+            jugadores[1] = jugadores[0];
+
+
+            puntajes[0] = puntaje;
+            jugadores[0] = nombreRecord;
         }
+        if (puntaje >= puntajes[1] && puntaje < puntajes[0])
+        {
+            //puntajes[2] = puntajes[1];
+            //puntajes[3] = puntajes[2];
+            //puntajes[4] = puntajes[3];
+
+            puntajes[4] = puntajes[3];
+            jugadores[4] = jugadores[3];
+            puntajes[3] = puntajes[2];
+            jugadores[3] = jugadores[2];
+            puntajes[2] = puntajes[1];
+            jugadores[2] = jugadores[1];
+
+            puntajes[1] = puntaje;
+            jugadores[1] = nombreRecord;
+        }
+        if (puntaje >= puntajes[2] && puntaje < puntajes[1])
+        {
+            //puntajes[3] = puntajes[2];
+            //puntajes[4] = puntajes[3];
+
+            puntajes[4] = puntajes[3];
+            jugadores[4] = jugadores[3];
+            puntajes[3] = puntajes[2];
+            jugadores[3] = jugadores[2];
+
+            puntajes[2] = puntaje;
+            jugadores[2] = nombreRecord;
+        }
+        if (puntaje >= puntajes[3] && puntaje < puntajes[2])
+        {
+            puntajes[4] = puntajes[3];
+            jugadores[4] = jugadores[3];
+
+            puntajes[3] = puntaje;
+            jugadores[3] = nombreRecord;
+        }
+        if (puntaje >= puntajes[4] && puntaje < puntajes[3])
+        {
+            puntajes[4] = puntaje;
+            jugadores[4] = nombreRecord;
+        }
+        string testF = puntajes[0] + slash +
+                jugadores[0] + numeral +
+                puntajes[1] + slash +
+                jugadores[1] + numeral +
+                puntajes[2] + slash +
+                jugadores[2] + numeral +
+                puntajes[3] + slash +
+                jugadores[3] + numeral +
+                puntajes[4] + slash +
+                jugadores[4];
+        PlayerPrefs.SetString(nombreCancion, testF);
 
         //ReCalcular orden de la tabla si es mayor al #1 actual
         if (puntaje >= PlayerPrefs.GetInt(T1_valor))
@@ -277,7 +459,30 @@ public class PuntajeTabla : MonoBehaviour {
 
     public void ActualizarTablaUI()
     {
-        U1_nombre.text = PlayerPrefs.GetString(T1_nombre);
+        ///tabla especifica por cancion
+        U1_nombre.text = jugadores[0];
+        U1_valor.text = puntajes[0].ToString();
+        //U1_cancion.text = "-";
+
+        U2_nombre.text = jugadores[1];
+        U2_valor.text = puntajes[1].ToString();
+        //U2_cancion.text = "-";
+
+        U3_nombre.text = jugadores[2];
+        U3_valor.text = puntajes[2].ToString();
+        //U3_cancion.text = "-";
+
+        U4_nombre.text = jugadores[3];
+        U4_valor.text = puntajes[3].ToString();
+        //U4_cancion.text = "-";
+
+        U5_nombre.text = jugadores[4];
+        U5_valor.text = puntajes[4].ToString();
+        //U5_cancion.text = "-";
+
+
+        ///tabla general
+        /*U1_nombre.text = PlayerPrefs.GetString(T1_nombre);
         U1_valor.text = PlayerPrefs.GetInt(T1_valor).ToString();
         U1_cancion.text = PlayerPrefs.GetString(T1_cancion);
 
@@ -295,31 +500,6 @@ public class PuntajeTabla : MonoBehaviour {
 
         U5_nombre.text = PlayerPrefs.GetString(T5_nombre);
         U5_valor.text = PlayerPrefs.GetInt(T5_valor).ToString();
-        U5_cancion.text = PlayerPrefs.GetString(T5_cancion);
-    }
-
-    public void BorraKeys()
-    {
-        PlayerPrefs.DeleteAll();
-        Debug.Log("Reset PlayerPrefs");
-        PlayerPrefs.SetInt(T1_valor, 0);
-        PlayerPrefs.SetString(T1_nombre, espacios);
-        PlayerPrefs.SetString(T1_cancion, espacios);
-
-        PlayerPrefs.SetInt(T2_valor, 0);
-        PlayerPrefs.SetString(T2_nombre, espacios);
-        PlayerPrefs.SetString(T2_cancion, espacios);
-
-        PlayerPrefs.SetInt(T3_valor, 0);
-        PlayerPrefs.SetString(T3_nombre, espacios);
-        PlayerPrefs.SetString(T3_cancion, espacios);
-
-        PlayerPrefs.SetInt(T4_valor, 0);
-        PlayerPrefs.SetString(T4_nombre, espacios);
-        PlayerPrefs.SetString(T4_cancion, espacios);
-
-        PlayerPrefs.SetInt(T5_valor, 0);
-        PlayerPrefs.SetString(T5_nombre, espacios);
-        PlayerPrefs.SetString(T5_cancion, espacios);
+        U5_cancion.text = PlayerPrefs.GetString(T5_cancion);*/
     }
 }

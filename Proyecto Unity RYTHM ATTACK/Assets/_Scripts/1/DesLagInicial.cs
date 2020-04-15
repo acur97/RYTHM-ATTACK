@@ -24,14 +24,4 @@ public class DesLagInicial : MonoBehaviour {
         Instantiate(bala4, transform);
         Instantiate(sparks, transform);
     }
-
-    private void Start()
-    {
-        Debug.LogWarning("Poooooooooool");
-    }
-
-    private void OnDisable()
-    {
-        Debug.LogWarning("Poooooooooool");
-    }
 }

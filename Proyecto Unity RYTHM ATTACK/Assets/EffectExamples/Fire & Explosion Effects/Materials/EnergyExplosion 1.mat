@@ -5,12 +5,13 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: EnergyExplosion 1
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _FADING_ON _GLOSSYREFLECTIONS_OFF
-    _REQUIRE_UV2 _SPECULARHIGHLIGHTS_OFF _USE_GRADIENT_ON
-  m_LightmapFlags: 1
+  m_Shader: {fileID: 211, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _ALPHABLEND_ON _FADING_ON _GLOSSYREFLECTIONS_OFF _REQUIRE_UV2
+    _SPECULARHIGHLIGHTS_OFF _USE_GRADIENT_ON
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
@@ -50,7 +51,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: c6dd5cb7a6d17da428c25bcfc4269a5c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5dd198d85c911d44f8a3f9f9d6b00be4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexture:
@@ -104,7 +105,7 @@ Material:
     - _DistortionEnabled: 0
     - _DistortionStrength: 1
     - _DistortionStrengthScaled: 0
-    - _DstBlend: 10
+    - _DstBlend: 1
     - _EdgeSize: 0.2
     - _EmissionEnabled: 0
     - _FlipbookMode: 1
@@ -115,7 +116,7 @@ Material:
     - _InvFade: 1
     - _LightingEnabled: 0
     - _Metallic: 0
-    - _Mode: 3
+    - _Mode: 4
     - _NoiseStrength: 0.4
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -124,7 +125,7 @@ Material:
     - _SoftParticlesFarFadeDistance: 2
     - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 0
-    - _SrcBlend: 1
+    - _SrcBlend: 5
     - _UVSec: 0
     - _Use_Gradient: 1
     - _ZWrite: 0
@@ -133,8 +134,8 @@ Material:
     - _pow: 1
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 11.984323, g: 11.984323, b: 11.984323, a: 0}
-    - _ColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 11.984324, g: 11.984324, b: 11.984324, a: 1}
+    - _ColorAddSubDiff: {r: -1, g: 1, b: 0, a: 0}
     - _EdgeColor1: {r: 1, g: 1, b: 1, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0.21960784, g: 1.6470588, b: 2.9960785, a: 1}

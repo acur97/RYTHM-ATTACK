@@ -20,7 +20,7 @@ public class FavIconos : MonoBehaviour {
     {
         rect = GetComponent<RectTransform>();
         multiplicador = (multipli / Screen.dpi);
-        multiplicador = multiplicador / 10;
+        multiplicador /= 10;
     }
 
     public void SeleccionarM()

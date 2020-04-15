@@ -9,17 +9,22 @@ public class Bala : MonoBehaviour {
 
     private Vector3 movimiento = new Vector3(0, 0, 0);
 
-    private void Update()
-    {
-        if (transform.localPosition.y < puntoMuerte)
-        {
-            Destroy(gameObject);
-        }
-    }
-
     private void FixedUpdate()
     {
         movimiento = new Vector3(0, -(AudioSpectrum.amplitudeBuffer * Velocidad), 0);
         transform.Translate(movimiento);
+    }
+
+    private void Update()
+    {
+        if (transform.localPosition.y < puntoMuerte)
+        {
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
+        }
+        if (transform.localPosition.y > -puntoMuerte)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

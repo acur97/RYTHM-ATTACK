@@ -11,6 +11,8 @@ public class PreventDeselectionGroup : MonoBehaviour
     private void Awake()
     {
         evt = GetComponent<EventSystem>();
+        //Cursor.lockState = CursorLockMode.Confined;
+        //Cursor.visible = false;
     }
 
     private void Update()

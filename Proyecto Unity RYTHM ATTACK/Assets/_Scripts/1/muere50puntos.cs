@@ -5,14 +5,20 @@ using UnityEngine;
 public class muere50puntos : MonoBehaviour {
 
     public float tiempoMuerte;
-    private float tiempo = 1;
+    private float tiempo;
 
-    private void FixedUpdate()
+    private void OnEnable()
     {
-        tiempo -= tiempoMuerte;
+        tiempo = 1;
+    }
+
+    private void Update()
+    {
+        tiempo -= tiempoMuerte * Time.deltaTime;
         if (tiempo <= 0)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
     }
 }

@@ -14,13 +14,13 @@ public class VidaEnemigos : MonoBehaviour {
     public Bandas EQ;
     public SEF_Equalizer equalizer;
     public float Vida;
-    [Space]
-    public GameObject hit;
-    public GameObject puntos50;
-    private Vector3 puntos50offset;
-    public Transform padreHit;
+    //[Space]
+    //public GameObject hit;
+    //public GameObject puntos50;
+    //private Vector3 puntos50offset;
+    //public Transform padreHit;
 
-    private Quaternion rotacionZero = Quaternion.identity;
+    //private Quaternion rotacionZero = Quaternion.identity;
 
     private readonly string proyectil = "Proyectiles";
     private readonly int emission = Shader.PropertyToID("_EmissionColor");
@@ -39,24 +39,25 @@ public class VidaEnemigos : MonoBehaviour {
             {
                 Vida -= 1;
                 pts.AddPuntos(1);
-                Instantiate(hit, other.transform.position, rotacionZero, padreHit);
-                puntos50offset = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z - 2.5f);
-                Instantiate(puntos50, puntos50offset, rotacionZero, padreHit);
-                Destroy(other.gameObject);
+                other.gameObject.SetActive(false);
+                PoolActivos.Pool.I_VFXchoqueEnemigo(other.transform.position);
+                PoolActivos.Pool.I_VFXc50puntos(other.transform.position);
             }
             else
             {
-                if (EQ == Bandas.altos)
+                switch (EQ)
                 {
-                    equalizer.highFreq = 0;
-                }
-                if (EQ == Bandas.medios)
-                {
-                    equalizer.midFreq = 0;
-                }
-                if (EQ == Bandas.bajos)
-                {
-                    equalizer.lowFreq = 0;
+                    case Bandas.altos:
+                        equalizer.highFreq = 0;
+                        break;
+                    case Bandas.medios:
+                        equalizer.midFreq = 0;
+                        break;
+                    case Bandas.bajos:
+                        equalizer.lowFreq = 0;
+                        break;
+                    default:
+                        break;
                 }
                 pts.AddPuntos(2);
                 mov.VelocidadBanda = 0;

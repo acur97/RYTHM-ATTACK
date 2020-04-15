@@ -20,6 +20,7 @@ public class Puntaje : MonoBehaviour {
     //public GameObject TextoPuntaje;
     public GameObject PanelNormal;
     public GameObject PanelRecord;
+    public GameObject PanelTabla;
     public PuntajeTabla puntajeT;
     public TMP_InputField inputName;
     [Space]
@@ -29,7 +30,7 @@ public class Puntaje : MonoBehaviour {
     public static int scoreBala;
     public static int scoreExplocion;
     public static int Score;
-    public static bool SiRecord;
+    //public static bool SiRecord;
     public static bool subidaPoder = true;
     public static bool poderCero = false;
 
@@ -39,15 +40,21 @@ public class Puntaje : MonoBehaviour {
     private string titulo_anterior;
     //private float poderValor;
 
-    private readonly string T1_nombre = "tabla #1_nombre";
+    //private readonly string T1_nombre = "tabla #1_nombre";
     private readonly string x1 = "x1";
     private readonly string x2 = "x2";
     private readonly string x3 = "x3";
     private readonly string x4 = "x4";
     private readonly string x5 = "x5";
 
+    private int val;
+
     private void Awake()
     {
+        PanelNormal.SetActive(true);
+        PanelRecord.SetActive(false);
+        PanelTabla.SetActive(false);
+
         scoreBala = puntajeBala;
         scoreExplocion = puntajeExplocion;
         puntaje = 0;
@@ -158,9 +165,60 @@ public class Puntaje : MonoBehaviour {
 
     public void ActualizarPuntaje()
     {
-        puntajeT.PreguntaRecord(puntaje);
-
-        if (!PlayerPrefs.HasKey(T1_nombre))
+        val = puntajeT.PreguntaRecord(puntaje, Musicas.pak.NombreCancion);
+        switch (val)
+        {
+            case 1:
+                PanelNormal.SetActive(false);
+                PanelRecord.SetActive(true);
+                inputName.Select();
+                titulo_anterior = "NEW RECORD: " + puntaje + " !";
+                scoreFinal.text = "NEW RECORD: " + puntaje + " !" + "\n" + "ENTER YOUR NAME";
+                break;
+            case 2:
+                PanelNormal.SetActive(false);
+                PanelRecord.SetActive(true);
+                inputName.Select();
+                titulo_anterior = "NEW POSITION: " + puntaje + " P-2";
+                scoreFinal.text = "NEW POSITION: " + puntaje + " P-2" + "\n" + "ENTER YOUR NAME";
+                break;
+            case 3:
+                PanelNormal.SetActive(false);
+                PanelRecord.SetActive(true);
+                inputName.Select();
+                titulo_anterior = "NEW POSITION: " + puntaje + " P-3";
+                scoreFinal.text = "NEW POSITION: " + puntaje + " P-3" + "\n" + "ENTER YOUR NAME";
+                break;
+            case 4:
+                PanelNormal.SetActive(false);
+                PanelRecord.SetActive(true);
+                inputName.Select();
+                titulo_anterior = "NEW POSITION: " + puntaje + " P-4";
+                scoreFinal.text = "NEW POSITION: " + puntaje + " P-4" + "\n" + "ENTER YOUR NAME";
+                break;
+            case 5:
+                PanelNormal.SetActive(false);
+                PanelRecord.SetActive(true);
+                inputName.Select();
+                titulo_anterior = "NEW POSITION: " + puntaje + " P-5";
+                scoreFinal.text = "NEW POSITION: " + puntaje + " P-5" + "\n" + "ENTER YOUR NAME";
+                break;
+            //case 6:
+            //    PanelNormal.SetActive(true);
+            //    PanelRecord.SetActive(false);
+            //    titulo_anterior = puntaje.ToString();
+            //    scoreFinal.text = puntaje.ToString();
+            //    break;
+            case 0:
+                PanelNormal.SetActive(true);
+                PanelRecord.SetActive(false);
+                titulo_anterior = "SCORE: " + puntaje;
+                scoreFinal.text = "SCORE: " + puntaje;
+                break;
+            default:
+                break;
+        }
+        /*if (!PlayerPrefs.HasKey(T1_nombre))
         {
             PanelNormal.SetActive(false);
             PanelRecord.SetActive(true);
@@ -175,6 +233,14 @@ public class Puntaje : MonoBehaviour {
             inputName.Select();
             titulo_anterior = "NEW RECORD: " + puntaje + " !";
             scoreFinal.text = "NEW RECORD: " + puntaje + " !" + "\n" + "ENTER YOUR NAME";
+        }*/
+        /*if (puntajeT.PreguntaRecord(puntaje))
+        {
+            PanelNormal.SetActive(false);
+            PanelRecord.SetActive(true);
+            inputName.Select();
+            titulo_anterior = "NEW RECORD: " + puntaje + " !";
+            scoreFinal.text = "NEW RECORD: " + puntaje + " !" + "\n" + "ENTER YOUR NAME";
         }
         else
         {
@@ -182,7 +248,7 @@ public class Puntaje : MonoBehaviour {
             PanelRecord.SetActive(false);
             titulo_anterior = "SCORE: " + puntaje;
             scoreFinal.text = "SCORE: " + puntaje;
-        }
+        }*/
     }
 
     public void SubmitRecord(string name)

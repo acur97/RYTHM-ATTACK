@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class MoverJugador : MonoBehaviour {
 
-    public GameObject proyectil;
+    //public GameObject proyectil;
     public Transform PuntoDisparo1;
     public Transform PuntoDisparo2;
-    public Transform PadreDisparos;
+    //public Transform PadreDisparos;
     public float velocidad;
+    public ForceMode force;
     [Space]
     public Vector2 margenes;
     public float EsperaEntreBalas;
@@ -19,7 +20,7 @@ public class MoverJugador : MonoBehaviour {
     private float Vmove;
     private float naveX;
     private float naveY;
-    private Quaternion rotacionZero = Quaternion.identity;
+    //private Quaternion rotacionZero = Quaternion.identity;
     private bool undido;
     public static bool recibeInputs = true;
 
@@ -35,7 +36,7 @@ public class MoverJugador : MonoBehaviour {
     private void Update()
     {
         move = new Vector3(Hmove, Vmove, 0);
-        rb.AddForce(move);
+        rb.AddForce(move, force);
 
         naveX = transform.localPosition.x;
         naveY = transform.localPosition.y;
@@ -46,14 +47,19 @@ public class MoverJugador : MonoBehaviour {
 
         if (recibeInputs)
         {
-            Hmove = Input.GetAxis(horizontal) * velocidad;
-            Vmove = Input.GetAxis(vertical) * velocidad;
+            Hmove = Input.GetAxis(horizontal) * Time.deltaTime * velocidad;
+            Vmove = Input.GetAxis(vertical) * Time.deltaTime * velocidad;
 
             if (Input.GetButtonDown(disparo))
             {
                 undido = true;
                 StartCoroutine(Disparar());
             }
+        }
+        else
+        {
+            Hmove = 0;
+            Vmove = 0;
         }
 
         if (Input.GetButtonUp(disparo))
@@ -65,8 +71,10 @@ public class MoverJugador : MonoBehaviour {
 
     IEnumerator Disparar()
     {
-        Instantiate(proyectil, PuntoDisparo1.position, rotacionZero, PadreDisparos);
-        Instantiate(proyectil, PuntoDisparo2.position, rotacionZero, PadreDisparos);
+        //Instantiate(proyectil, PuntoDisparo1.position, rotacionZero, PadreDisparos);
+        //Instantiate(proyectil, PuntoDisparo2.position, rotacionZero, PadreDisparos);
+        PoolActivos.Pool.I_BalaJugador(PuntoDisparo1.position);
+        PoolActivos.Pool.I_BalaJugador(PuntoDisparo2.position);
         yield return new WaitForSeconds(EsperaEntreBalas);
         if (undido)
         {

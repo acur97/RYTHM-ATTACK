@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Proyectil : MonoBehaviour {
-    
+public class Proyectil : MonoBehaviour
+{
     public float VelocidadProyectil;
     public float puntoMuerte;
 
@@ -18,7 +18,12 @@ public class Proyectil : MonoBehaviour {
     {
         if (transform.localPosition.y > puntoMuerte)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
+        }
+        if (transform.localPosition.y < -puntoMuerte)
+        {
+            gameObject.SetActive(false);
         }
 
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
@@ -28,9 +33,12 @@ public class Proyectil : MonoBehaviour {
     {
         if (other.CompareTag(balas))
         {
-            ChoqueBalas.InsanciarVfx(transform.position);
-            Destroy(other.gameObject);
-            Destroy(transform.gameObject);
+            //ChoqueBalas.InsanciarVfx(transform.position);
+            gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
+            PoolActivos.Pool.I_VFXchoqueEntreBalas(other.transform.position);
+            //Destroy(other.gameObject);
+            //Destroy(transform.gameObject);
         }
     }
 }

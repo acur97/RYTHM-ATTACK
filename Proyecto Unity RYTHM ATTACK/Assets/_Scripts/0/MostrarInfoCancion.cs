@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class MostrarInfoCancion : MonoBehaviour {
 
@@ -19,8 +20,8 @@ public class MostrarInfoCancion : MonoBehaviour {
     public Color Cfacil = Color.green;
     public TextMeshProUGUI puntajeCancion;
     public RectTransform Content;
-    private float ContentY;
-    public ButtonSelectionController bController;
+    public EventSystem eSystem;
+    private GameObject LastSel;
     [Space]
     public CancionesPak pak;
     [Space]
@@ -29,20 +30,47 @@ public class MostrarInfoCancion : MonoBehaviour {
     public Cargando cargar;
     [Space]
     public UnityEvent OnCancel;
-    
-    private readonly string RecordPorCancion = "RecordDe_";
-    private readonly string cancel = "Cancel";
 
-    private string record_cancionN;
+    private Button PrimerSelect;
+    private bool PrimeraVez = true;
+    private bool Devolver = false;
+
+    //private readonly string RecordPorCancion = "RecordDe_";
+    private readonly string cancel = "Cancel";
+    private readonly string record = "Record:";
+    private readonly string noRecord = "No record";
+    private readonly string enter = "\n";
+    private readonly string cero = "0";
+    private readonly string pakRecords = "0/_#0/_#0/_#0/_#0/_";
+    private readonly string facil = "Facil";
+    private readonly string medio = "Medio";
+    private readonly string dificil = "Dificil";
+
+    //private string record_cancionN;
     private int Svalor;
     //private float duracion;
 
     private float speed1;
     private float speed2;
 
+    private float LastHeight;
+    private float LastWidth;
+    public RenderTexture UIrt;
+    public Camera camUI;
+
+    public static CancionesPak pakS;
+
     private void Awake()
     {
-        ContentY = Content.position.y;
+        LastHeight = Screen.height;
+        LastWidth = Screen.width;
+
+        camUI.targetTexture.Release();
+        UIrt.height = Screen.height;
+        UIrt.width = Screen.width;
+        camUI.targetTexture = UIrt;
+
+        PrimerSelect = Content.GetComponentInChildren<Button>();
     }
 
     private void OnEnable()
@@ -52,16 +80,17 @@ public class MostrarInfoCancion : MonoBehaviour {
 
     public void MandarInfo(CancionesPak pakC)
     {
-        pak = pakC;
-        ActualizarInfo();
+        if (!Devolver)
+        {
+            pak = pakC;
+            ActualizarInfo();
+            Devolver = false;
+        }
     }
 
     public void QuitarInfo()
     {
-        pak = null;
-        Content.position = new Vector3(Content.position.x, ContentY, Content.position.z);
-        bController.m_index = 0;
-        bController.m_verticalPosition = 1;
+        LastSel = eSystem.currentSelectedGameObject;
     }
 
     public void ActualizarInfo()
@@ -70,26 +99,38 @@ public class MostrarInfoCancion : MonoBehaviour {
         StopAllCoroutines();
         artista.text = pak.Artista;
         logoCancion.sprite = pak.LogoCancion;
-        if (pak.Dificultad.ToString() == "Facil")
+        if (pak.Dificultad.ToString() == facil)
         {
             Svalor = 1;
         }
-        if (pak.Dificultad.ToString() == "Medio")
+        if (pak.Dificultad.ToString() == medio)
         {
             Svalor = 2;
         }
-        if (pak.Dificultad.ToString() == "Dificil")
+        if (pak.Dificultad.ToString() == dificil)
         {
             Svalor = 3;
         }
-        record_cancionN = RecordPorCancion + pak.NombreCancion;
-        if (PlayerPrefs.HasKey(record_cancionN))
+        //record_cancionN = RecordPorCancion + pak.NombreCancion;
+
+        if (!PlayerPrefs.HasKey(pak.NombreCancion))
         {
-            puntajeCancion.text = "Record:" + "\n" + "\n" + PlayerPrefs.GetString(record_cancionN + 2) + "\n" + PlayerPrefs.GetInt(record_cancionN).ToString();
+            PlayerPrefs.SetString(pak.NombreCancion, pakRecords);
+            Debug.Log("crear string");
+        }
+        string tablaCancion_string;
+        tablaCancion_string = PlayerPrefs.GetString(pak.NombreCancion);
+        string[] tablaCancion_array = tablaCancion_string.Split('#');
+        string[] beta = tablaCancion_array[0].Split('/');
+        string jugador1 = beta[1];
+        string puntaje1 = beta[0];
+        if (jugador1 == cero)
+        {
+            puntajeCancion.text = record + enter + enter + jugador1 + enter + puntaje1;
         }
         else
         {
-            puntajeCancion.text = "No record";
+            puntajeCancion.text = noRecord;
         }
         StartCoroutine(ChangeSpeed1(dificultad.value, Svalor, 0.25f));
         StartCoroutine(IniciarPreviewCancion());
@@ -129,6 +170,20 @@ public class MostrarInfoCancion : MonoBehaviour {
         speed2 = v_end;
     }
 
+    public void PrimerSel()
+    {
+        if (PrimeraVez)
+        {
+            PrimerSelect.Select();
+            PrimeraVez = false;
+        }
+        else
+        {
+            eSystem.SetSelectedGameObject(LastSel);
+            Devolver = false;
+        }
+    }
+
     private void Update()
     {
         dificultad.value = speed1;
@@ -137,12 +192,26 @@ public class MostrarInfoCancion : MonoBehaviour {
         if (Input.GetButtonDown(cancel))
         {
             OnCancel.Invoke();
+            Devolver = true;
+        }
+
+        if (LastHeight != Screen.height || LastWidth != Screen.width)
+        {
+            LastHeight = Screen.height;
+            LastWidth = Screen.width;
+
+            camUI.targetTexture.Release();
+            UIrt.height = Screen.height;
+            UIrt.width = Screen.width;
+            camUI.targetTexture = UIrt;
         }
     }
 
     public void SeleccionarCancion()
     {
         Musicas.pak = pak;
+        pakS = pak;
+        PlayerPrefs.SetInt("Restart", 0);
         StartCoroutine(ChangeSpeed2(source.volume, 0, 0.5f));
         cargar.IniciarCarga();
     }

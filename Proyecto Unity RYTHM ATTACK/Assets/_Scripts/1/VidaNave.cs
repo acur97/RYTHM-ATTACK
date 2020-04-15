@@ -16,11 +16,11 @@ public class VidaNave : MonoBehaviour {
     public ExplocionBolas bom;
     public GameObject naveExplota;
     public GameObject naveMisma;
-    [Space]
-    public GameObject hit;
-    public Transform padreHit;
+    //[Space]
+    //public GameObject hit;
+    //public Transform padreHit;
 
-    private Quaternion rotacionZero = Quaternion.identity;
+    //private Quaternion rotacionZero = Quaternion.identity;
 
     private readonly string balas = "Balas";
     private readonly string laser = "Laser";
@@ -44,8 +44,10 @@ public class VidaNave : MonoBehaviour {
             if (Vida > 0)
             {
                 BajarVida(1);
-                Instantiate(hit, other.transform.position, rotacionZero, padreHit);
-                Destroy(other.gameObject);
+                //Instantiate(hit, other.transform.position, rotacionZero, padreHit);
+                PoolActivos.Pool.I_VFXchoqueJugador(other.transform.position);
+                //Destroy(other.gameObject);
+                other.gameObject.SetActive(false);
 
             }
             if (Vida <= 0)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Musicas : MonoBehaviour {
 
@@ -41,14 +42,16 @@ public class Musicas : MonoBehaviour {
     private readonly string D_medio = "Medio";
     private readonly string D_dificil = "Dificil";
 
-
     public static CancionesPak pak;
-    
 
     private void Awake()
     {
         source = GetComponent<AudioSource>();
 
+        if (PlayerPrefs.GetInt("Restart") == 1)
+        {
+            pak = MostrarInfoCancion.pakS;
+        }
         if (pak != null)
         {
             source.clip = pak.Cancion;
@@ -89,5 +92,33 @@ public class Musicas : MonoBehaviour {
     private void Start()
     {
         source.Play();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F12))
+        {
+            PlayerPrefs.DeleteAll();
+            Debug.Log("Reset PlayerPrefs");
+            PlayerPrefs.SetInt("tabla #1_valor", 0);
+            PlayerPrefs.SetString("tabla #1_nombre", "----------");
+            PlayerPrefs.SetString("tabla #1_cancion", "----------");
+
+            PlayerPrefs.SetInt("tabla #2_valor", 0);
+            PlayerPrefs.SetString("tabla #2_nombre", "----------");
+            PlayerPrefs.SetString("tabla #2_cancion", "----------");
+
+            PlayerPrefs.SetInt("tabla #3_valor", 0);
+            PlayerPrefs.SetString("tabla #3_nombre", "----------");
+            PlayerPrefs.SetString("tabla #3_cancion", "----------");
+
+            PlayerPrefs.SetInt("tabla #4_valor", 0);
+            PlayerPrefs.SetString("tabla #4_nombre", "----------");
+            PlayerPrefs.SetString("tabla #4_cancion", "----------");
+
+            PlayerPrefs.SetInt("tabla #5_valor", 0);
+            PlayerPrefs.SetString("tabla #5_nombre", "----------");
+            PlayerPrefs.SetString("tabla #5_cancion", "----------");
+        }
     }
 }
