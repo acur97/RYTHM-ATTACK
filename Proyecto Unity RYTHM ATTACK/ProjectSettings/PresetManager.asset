@@ -21,3 +21,20 @@ PresetManager:
     - m_Preset: {fileID: 2655988077585873504, guid: 61ef18542737a5d46860698aec8c7e73,
         type: 2}
       m_Filter: 
+  - first:
+      m_NativeTypeID: 223
+      m_ManagedTypePPtr: {fileID: 0}
+      m_ManagedTypeFallback: 
+    second:
+    - m_Preset: {fileID: 2655988077585873504, guid: d4c184a3c13941240886fceed20b9cd7,
+        type: 2}
+      m_Filter: 
+  - first:
+      m_NativeTypeID: 114
+      m_ManagedTypePPtr: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc,
+        type: 3}
+      m_ManagedTypeFallback: 
+    second:
+    - m_Preset: {fileID: 2655988077585873504, guid: 76f1fa7581e5b5342b5bf1072c5207b8,
+        type: 2}
+      m_Filter: 

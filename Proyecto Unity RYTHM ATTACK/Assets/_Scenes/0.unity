@@ -5908,7 +5908,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 34.15
+  m_fontSize: 98.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9089,9 +9089,9 @@ GameObject:
   - component: {fileID: 1612743580}
   - component: {fileID: 1612743579}
   - component: {fileID: 1612743578}
-  - component: {fileID: 1612743577}
   - component: {fileID: 1612743576}
-  - component: {fileID: 1612743581}
+  - component: {fileID: 1612743577}
+  - component: {fileID: 1612743582}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9173,7 +9173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bleeding: 0.5
   _fringing: 0.2
-  _scanline: 0.2
+  _scanline: 0.15
   _shader: {fileID: 4800000, guid: 30c6511fedf271b4d98f894c9a250aea, type: 3}
 --- !u!81 &1612743578
 AudioListener:
@@ -9240,20 +9240,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1612743581
+--- !u!114 &1612743582
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612743575}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45099d624c1e6c14e9514f4e5ea1ed9c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3309686a9fbbe6e42a182d5e0257704c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sourceTexture: {fileID: 0}
-  _alphaSupport: 0
+  intensity: 0.25
+  threshold: 0
+  blurSpread: 0.5
+  separableBlurShader: {fileID: 4800000, guid: e97c14fbb5ea04c3a902cc533d7fc5d1, type: 3}
+  contrastCompositeShader: {fileID: 4800000, guid: 273404942eede4ea1883ca1fb2942507,
+    type: 3}
 --- !u!1 &1616965023
 GameObject:
   m_ObjectHideFlags: 0
@@ -10557,7 +10561,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 32.95
+  m_fontSize: 94.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11629,7 +11633,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 32.95
+  m_fontSize: 94.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11982,7 +11986,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 73.15
+  m_fontSize: 57.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
 
 public class Musicas : MonoBehaviour {
 
@@ -36,6 +37,8 @@ public class Musicas : MonoBehaviour {
     [Space]
     public Image Sonda1;
     public Image Sonda2;
+    [Space]
+    public TextMeshProUGUI CancionPausa;
 
     private AudioSource source;
     private readonly string D_facil = "Facil";
@@ -81,6 +84,8 @@ public class Musicas : MonoBehaviour {
                 RenderSettings.ambientEquatorColor = Hardquator;
                 RenderSettings.ambientGroundColor = HardGround;
             }
+
+            CancionPausa.text = pak.NombreCancion + " - " + pak.Artista;
         }
         else
         {

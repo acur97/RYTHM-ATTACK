@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class Puntaje : MonoBehaviour {
 
@@ -33,6 +35,10 @@ public class Puntaje : MonoBehaviour {
     //public static bool SiRecord;
     public static bool subidaPoder = true;
     public static bool poderCero = false;
+
+    [Space]
+    public UnityEvent EndEditScore;
+    private string _name;
 
     private int puntaje = 0;
     private float Fcombos;
@@ -251,10 +257,19 @@ public class Puntaje : MonoBehaviour {
         }*/
     }
 
-    public void SubmitRecord(string name)
+    public void ComprobarNombre(string name)
+    {
+        if (name != "")
+        {
+            _name = name;
+            EndEditScore.Invoke();
+        }
+    }
+
+    public void SubmitRecord()
     {
         puntajeT.NombreDeCancion(Musicas.pak.NombreCancion);
-        puntajeT.NombreDeRecord(name);
+        puntajeT.NombreDeRecord(_name);
         puntajeT.NuevoPuntaje(puntaje);
         puntajeT.ActualizarTablaUI();
         PanelRecord.SetActive(false);
