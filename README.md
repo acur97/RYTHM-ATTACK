@@ -6,3 +6,7 @@ Es un videojuego de disparos tipo “Bullet Hell” en el que el jugador debe de
 Imagenes y videos del Proyecto:
 
 https://www.behance.net/gallery/97309731/RYTHM-ATTACK
+
+La ultima version v1.1.1 puede descargarse desde aqui:
+
+https://acur97.itch.io/rythm-attack
