@@ -45,6 +45,7 @@ public class MostrarInfoCancion : MonoBehaviour {
     private readonly string facil = "Facil";
     private readonly string medio = "Medio";
     private readonly string dificil = "Dificil";
+    private readonly string _Restart = "Restart";
 
     //private string record_cancionN;
     private int Svalor;
@@ -151,7 +152,7 @@ public class MostrarInfoCancion : MonoBehaviour {
 
     IEnumerator IniciarPreviewCancion()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSecondsRealtime(1);
         source.clip = pak.Cancion;
         source.Play();
         source.time = pak.inicioPreview;
@@ -211,7 +212,7 @@ public class MostrarInfoCancion : MonoBehaviour {
     {
         Musicas.pak = pak;
         pakS = pak;
-        PlayerPrefs.SetInt("Restart", 0);
+        PlayerPrefs.SetInt(_Restart, 0);
         StartCoroutine(ChangeSpeed2(source.volume, 0, 0.5f));
         cargar.IniciarCarga();
     }

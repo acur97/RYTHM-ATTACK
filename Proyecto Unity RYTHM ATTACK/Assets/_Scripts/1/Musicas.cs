@@ -44,6 +44,7 @@ public class Musicas : MonoBehaviour {
     private readonly string D_facil = "Facil";
     private readonly string D_medio = "Medio";
     private readonly string D_dificil = "Dificil";
+    private readonly string _Restart = "Restart";
 
     public static CancionesPak pak;
 
@@ -51,7 +52,7 @@ public class Musicas : MonoBehaviour {
     {
         source = GetComponent<AudioSource>();
 
-        if (PlayerPrefs.GetInt("Restart") == 1)
+        if (PlayerPrefs.GetInt(_Restart) == 1)
         {
             pak = MostrarInfoCancion.pakS;
         }

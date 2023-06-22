@@ -1,0 +1,166 @@
+Using pre-set license
+Built from '2020.2/staging' branch; Version is '2020.2.7f1 (c53830e277f1) revision 12924976'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19043.1023; Version 2009; 64bit' Language: 'es' Physical Memory: 16305 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.2.7f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Unity Projects/Github projects/RYTHM-ATTACK/Proyecto Unity RYTHM ATTACK
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+55151
+Successfully changed project path to: D:/Unity Projects/Github projects/RYTHM-ATTACK/Proyecto Unity RYTHM ATTACK
+D:/Unity Projects/Github projects/RYTHM-ATTACK/Proyecto Unity RYTHM ATTACK
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 28.54 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.7f1 (c53830e277f1)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Unity Projects/Github projects/RYTHM-ATTACK/Proyecto Unity RYTHM ATTACK/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon HD 7700 Series (ID=0x683d)
+    Vendor:   
+    VRAM:     1003 MB
+    Driver:   27.20.21003.8013
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56372
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001224 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 28.63 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.445 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001305 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\Github projects\RYTHM-ATTACK\Proyecto Unity RYTHM ATTACK\Assets\nu Assets\Easy Combine\Scripts\Editor\ch.sycoforge.Combine.Editor.dll
+Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\Github projects\RYTHM-ATTACK\Proyecto Unity RYTHM ATTACK\Assets\nu Assets\Easy Combine\Scripts\ch.sycoforge.Combine.dll
+Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\Github projects\RYTHM-ATTACK\Proyecto Unity RYTHM ATTACK\Assets\nu Assets\Shared\Scripts\Editor\ch.sycoforge.Unity.Editor.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.856 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1388 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 154.7 MB.
+System memory in use after: 154.8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 1933.
+Total: 1.449300 ms (FindLiveObjects: 0.139300 ms CreateObjectMapping: 0.094200 ms MarkObjects: 1.162400 ms  DeleteObjects: 0.052700 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Prefabs/Canvas Carga.prefab
+  artifactKey: Guid(2bea11398bf43b64ba62890feb0fb6dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Canvas Carga.prefab using Guid(2bea11398bf43b64ba62890feb0fb6dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c62e6b3ef119ed125b630756853e8bf') in 0.092403 seconds
+  Import took 0.094517 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.033965 seconds.
+  path: Assets/UI/0/barra.png
+  artifactKey: Guid(8161d1b77b7cb5840a3b60c603f93154) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/0/barra.png using Guid(8161d1b77b7cb5840a3b60c603f93154) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd42a2c1d953027f5c969a0cd89963c66') in 0.095419 seconds
+  Import took 0.097803 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005707 seconds.
+  path: Assets/Materials/UI.mat
+  artifactKey: Guid(25e6a5e347510bb429b6e41453239efb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/UI.mat using Guid(25e6a5e347510bb429b6e41453239efb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '152cf34a60b3a38d25a89643e265d8fa') in 0.044673 seconds
+  Import took 0.046872 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004405 seconds.
+  path: Assets/UI/Fonts mesh/HP-SCORE-QUIT-CONTINUE SDF.asset
+  artifactKey: Guid(1fe0dfd7a9422c04c856f780c225a2f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Fonts mesh/HP-SCORE-QUIT-CONTINUE SDF.asset using Guid(1fe0dfd7a9422c04c856f780c225a2f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77701789d2e1a8d7e08ce9f9148fdf3a') in 0.024592 seconds
+  Import took 0.026874 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002554 seconds.
+  path: Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile.shader
+  artifactKey: Guid(fe393ace9b354375a9cb14cdbbc28be4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile.shader using Guid(fe393ace9b354375a9cb14cdbbc28be4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df0c12a56ad71200409adfee6f3a1946') in 0.009737 seconds
+  Import took 0.012040 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003072 seconds.
+  path: Assets/TextMesh Pro/Resources/Shaders/TMPro_Properties.cginc
+  artifactKey: Guid(3997e2241185407d80309a82f9148466) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Shaders/TMPro_Properties.cginc using Guid(3997e2241185407d80309a82f9148466) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5093e11c1f5e680c0a4975201bed7f09') in 0.006779 seconds
+  Import took 0.009693 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.054843 seconds.
+  path: Assets/_Scripts/0/Cargando.cs
+  artifactKey: Guid(23e134443e6531c40b2b411ab1c54cfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scripts/0/Cargando.cs using Guid(23e134443e6531c40b2b411ab1c54cfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dd0f5585c6ce050e0f43dbe09415c4b') in 0.012986 seconds
+  Import took 0.015709 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 58.471070 seconds.
+  path: Assets/_Scenes/0.unity
+  artifactKey: Guid(a1d1a2d090522264486068d1055e225d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scenes/0.unity using Guid(a1d1a2d090522264486068d1055e225d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '681fcf63074a94b2a226ec9602e08827') in 0.009620 seconds
+  Import took 0.012420 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 699.191982 seconds.
+  path: Assets/_Scenes/1.unity
+  artifactKey: Guid(0900176d48593e0469dfdeb9df5335c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scenes/1.unity using Guid(0900176d48593e0469dfdeb9df5335c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '008187be6da01d6377b7df182a9216d2') in 0.006565 seconds
+  Import took 0.009921 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 33.213922 seconds.
+  path: Assets/_Scripts/1/CargandoOut.cs
+  artifactKey: Guid(ca7962dfc2e2663428b61c740d4a04ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scripts/1/CargandoOut.cs using Guid(ca7962dfc2e2663428b61c740d4a04ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c5fcd5cfdd5ed21c86284959dbd8037') in 0.006045 seconds
+  Import took 0.010125 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.952060 seconds.
+  path: Assets/_Scripts/1/BPMtrigger.cs
+  artifactKey: Guid(b1a8b4628cb1f644fb6fa411d325749d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scripts/1/BPMtrigger.cs using Guid(b1a8b4628cb1f644fb6fa411d325749d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15151b35b0b7b4f8d91cf6611b89c6c0') in 0.008708 seconds
+  Import took 0.011373 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

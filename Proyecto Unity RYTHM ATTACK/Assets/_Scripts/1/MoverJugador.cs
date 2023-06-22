@@ -75,10 +75,10 @@ public class MoverJugador : MonoBehaviour {
         //Instantiate(proyectil, PuntoDisparo2.position, rotacionZero, PadreDisparos);
         PoolActivos.Pool.I_BalaJugador(PuntoDisparo1.position);
         PoolActivos.Pool.I_BalaJugador(PuntoDisparo2.position);
-        yield return new WaitForSeconds(EsperaEntreBalas);
+        yield return new WaitForSecondsRealtime(EsperaEntreBalas);
         if (undido)
         {
-            yield return new WaitForSeconds(EsperaEntreBalas * 2);
+            yield return new WaitForSecondsRealtime(EsperaEntreBalas * 2);
             StartCoroutine(Disparar());
         }
     }

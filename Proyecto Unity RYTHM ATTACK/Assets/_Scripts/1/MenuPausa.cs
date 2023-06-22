@@ -20,6 +20,7 @@ public class MenuPausa : MonoBehaviour {
     private readonly string botonPausa = "Cancel";
     private readonly string scene0 = "0";
     private readonly string scene1 = "1";
+    private readonly string _Restart = "Restart";
 
     private void Awake()
     {
@@ -87,7 +88,7 @@ public class MenuPausa : MonoBehaviour {
         enPausa = 0;
         source.Stop();
         MoverJugador.recibeInputs = true;
-        PlayerPrefs.SetInt("Restart", 1);
+        PlayerPrefs.SetInt(_Restart, 1);
     }
 
     public void Exit()

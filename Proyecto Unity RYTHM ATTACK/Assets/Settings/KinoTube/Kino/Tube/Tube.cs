@@ -25,6 +25,12 @@ namespace Kino
         private readonly int _FringeDelta = Shader.PropertyToID("_FringeDelta");
         private readonly int _Scanline = Shader.PropertyToID("_Scanline");
 
+        private float bleedWidth = 0;
+        private float bleedStep = 0;
+        private int bleedTaps = 0;
+        private float bleedDelta = 0;
+        private float fringeWidth = 0;
+
         #endregion
 
         #region MonoBehaviour methods
@@ -50,11 +56,17 @@ namespace Kino
                 };
             }
 
-            var bleedWidth = 0.04f * _bleeding;  // width of bleeding
-            var bleedStep = 2.5f / source.width; // max interval of taps
-            var bleedTaps = Mathf.CeilToInt(bleedWidth / bleedStep);
-            var bleedDelta = bleedWidth / bleedTaps;
-            var fringeWidth = 0.0025f * _fringing; // width of fringing
+            //var bleedWidth = 0.04f * _bleeding;  // width of bleeding
+            //var bleedStep = 2.5f / source.width; // max interval of taps
+            //var bleedTaps = Mathf.CeilToInt(bleedWidth / bleedStep);
+            //var bleedDelta = bleedWidth / bleedTaps;
+            //var fringeWidth = 0.0025f * _fringing; // width of fringing
+
+            bleedWidth = 0.04f * _bleeding;  // width of bleeding
+            bleedStep = 2.5f / source.width; // max interval of taps
+            bleedTaps = Mathf.CeilToInt(bleedWidth / bleedStep);
+            bleedDelta = bleedWidth / bleedTaps;
+            fringeWidth = 0.0025f * _fringing; // width of fringing
 
             _material.SetInt(_BleedTaps, bleedTaps);
             _material.SetFloat(_BleedDelta, bleedDelta);

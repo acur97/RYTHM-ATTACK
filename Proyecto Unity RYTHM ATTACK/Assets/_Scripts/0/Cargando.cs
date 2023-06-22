@@ -16,6 +16,7 @@ public class Cargando : MonoBehaviour {
 
     private float speed = 0;
     private readonly Color blackOff = new Color(0, 0, 0, 0);
+    private readonly string _1 = "1";
 
     private void Awake()
     {
@@ -48,7 +49,7 @@ public class Cargando : MonoBehaviour {
 
     IEnumerator LoadSceneA()
     {
-        AsyncOperation operacion = SceneManager.LoadSceneAsync("1");
+        AsyncOperation operacion = SceneManager.LoadSceneAsync(_1);
 
         while (!operacion.isDone)
         {

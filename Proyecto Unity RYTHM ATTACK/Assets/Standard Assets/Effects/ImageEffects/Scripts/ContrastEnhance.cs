@@ -22,6 +22,16 @@ namespace UnityStandardAssets.ImageEffects
         public Shader separableBlurShader = null;
         public Shader contrastCompositeShader = null;
 
+        private readonly int __MainTexBlurred = Shader.PropertyToID("_MainTexBlurred");
+        private readonly int _intensity = Shader.PropertyToID("intensity");
+        private readonly int _threshold = Shader.PropertyToID("threshold");
+        private readonly string _offsets = "offsets";
+
+        private int rtW = 0;
+        private int rtH = 0;
+        private RenderTexture color2;
+        private RenderTexture color4a;
+        private RenderTexture color4b;
 
         public override bool CheckResources ()
 		{
@@ -43,35 +53,35 @@ namespace UnityStandardAssets.ImageEffects
                 return;
             }
 
-            int rtW = source.width;
-            int rtH = source.height;
+            rtW = source.width;
+            rtH = source.height;
 
-            RenderTexture color2 = RenderTexture.GetTemporary (rtW/2, rtH/2, 0);
+            color2 = RenderTexture.GetTemporary (rtW/2, rtH/2, 0);
 
             // downsample
 
             Graphics.Blit (source, color2);
-            RenderTexture color4a = RenderTexture.GetTemporary (rtW/4, rtH/4, 0);
+            color4a = RenderTexture.GetTemporary (rtW/4, rtH/4, 0);
             Graphics.Blit (color2, color4a);
             RenderTexture.ReleaseTemporary (color2);
 
             // blur
 
-            separableBlurMaterial.SetVector ("offsets", new Vector4 (0.0f, (blurSpread * 1.0f) / color4a.height, 0.0f, 0.0f));
-            RenderTexture color4b = RenderTexture.GetTemporary (rtW/4, rtH/4, 0);
+            separableBlurMaterial.SetVector (_offsets, new Vector4 (0.0f, (blurSpread * 1.0f) / color4a.height, 0.0f, 0.0f));
+            color4b = RenderTexture.GetTemporary (rtW/4, rtH/4, 0);
             Graphics.Blit (color4a, color4b, separableBlurMaterial);
             RenderTexture.ReleaseTemporary (color4a);
 
-            separableBlurMaterial.SetVector ("offsets", new Vector4 ((blurSpread * 1.0f) / color4a.width, 0.0f, 0.0f, 0.0f));
+            separableBlurMaterial.SetVector (_offsets, new Vector4 ((blurSpread * 1.0f) / color4a.width, 0.0f, 0.0f, 0.0f));
             color4a = RenderTexture.GetTemporary (rtW/4, rtH/4, 0);
             Graphics.Blit (color4b, color4a, separableBlurMaterial);
             RenderTexture.ReleaseTemporary (color4b);
 
             // composite
 
-            contrastCompositeMaterial.SetTexture ("_MainTexBlurred", color4a);
-            contrastCompositeMaterial.SetFloat ("intensity", intensity);
-            contrastCompositeMaterial.SetFloat ("threshold", threshold);
+            contrastCompositeMaterial.SetTexture (__MainTexBlurred, color4a);
+            contrastCompositeMaterial.SetFloat (_intensity, intensity);
+            contrastCompositeMaterial.SetFloat (_threshold, threshold);
             Graphics.Blit (source, destination, contrastCompositeMaterial);
 
             RenderTexture.ReleaseTemporary (color4a);

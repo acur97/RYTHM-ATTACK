@@ -33,4 +33,7 @@ sysinfo.txt
 
 # Builds
 *.apk
-*.unitypackage
+
+# Custom ignores
+!*.dll
+!*.json
